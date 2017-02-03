@@ -1,10 +1,11 @@
 var React = require('react');
+var SearchForm = require('./SearchForm.js');
 
 var App = React.createClass({
   render: function() {
     return (
       <div>
-        Hi
+        <SearchForm />
       </div>
     )
   }
