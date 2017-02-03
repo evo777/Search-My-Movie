@@ -3,6 +3,8 @@ var AppConstants = require('../constants/AppConstants');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
+var CHANGE_EVENT = 'change';
+
 //Store movies in this array
 var _movies = [];
 var _selected = '';
