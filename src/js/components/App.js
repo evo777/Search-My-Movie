@@ -22,6 +22,10 @@ var App = React.createClass({
         <SearchForm />
       </div>
     )
+  },
+
+  _onChange: function() {
+    this.setState(getAppState());
   }
 });
 
