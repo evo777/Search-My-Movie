@@ -1,4 +1,6 @@
 var React = require('react');
+var AppActions = require('../action/AppActions.js');
+var AppStore = require('../stores/AppStore');
 
 var SearchForm = React.createClass({
   render: function() {
@@ -13,7 +15,19 @@ var SearchForm = React.createClass({
         </form>
       </div>
     )
+  },
+
+  onSubmit: function(e) {
+    e.preventDefault();
+
+    var movie = {
+      title: this.refs.title.value.trim()
+    }
+
+    //Using Flux
+    AppActions.searchMovies(movie);
   }
+
 });
 
 module.exports = SearchForm;
