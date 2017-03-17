@@ -6,7 +6,7 @@ var SearchForm = React.createClass({
   render: function() {
     return (
       <div className="search-form">
-        <h1 className="text-center">Search For A Movie</h1>
+        <h1 className="text-center">Search for a Movie or Video Game</h1>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <input type="text" className="form-control" ref="title" placeholder="Please enter a movie title" />
