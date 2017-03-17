@@ -21178,7 +21178,7 @@ var SearchForm = React.createClass({displayName: "SearchForm",
   render: function() {
     return (
       React.createElement("div", {className: "search-form"}, 
-        React.createElement("h1", {className: "text-center"}, "Search For A Movie"), 
+        React.createElement("h1", {className: "text-center"}, "Search for a Movie or Video Game"), 
         React.createElement("form", {onSubmit: this.onSubmit}, 
           React.createElement("div", {className: "form-group"}, 
             React.createElement("input", {type: "text", className: "form-control", ref: "title", placeholder: "Please enter a movie title"})
