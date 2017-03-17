@@ -1,6 +1,7 @@
 var React = require('react');
 var AppActions = require('../action/AppActions');
 var AppStore = require('../stores/AppStore');
+var MovieResults = require('./MovieResults.js');
 var SearchForm = require('./SearchForm.js');
 
 //Return the array of movies, which will be display at the bottom of the search bar

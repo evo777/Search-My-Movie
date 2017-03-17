@@ -11,7 +11,6 @@ var Movie = React.createClass({
           <div className="col-md-4">
         {/*Get image when searched for movie*/}
             <img className="thumbnail" src={this.props.movie.Poster} />
-          }
           </div>
           <div className="col-md-8">
             <h4>{this.props.movie.Title}</h4>
@@ -29,3 +28,6 @@ var Movie = React.createClass({
   }
 
 });
+
+
+module.exports = Movie;
