@@ -4,7 +4,8 @@
   "description": "An application that searches your favorite movies.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "object-assign": "*"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }
