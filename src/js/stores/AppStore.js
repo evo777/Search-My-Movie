@@ -6,7 +6,6 @@ var AppAPI = require('../utils/appAPI.js');
 
 var CHANGE_EVENT = 'change';
 
-//Store movies in this array
 var _movies = [];
 var _selected = '';
 

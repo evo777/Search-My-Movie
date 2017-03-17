@@ -21062,8 +21062,8 @@ module.exports = AppActions;
 var React = require('react');
 var AppActions = require('../action/AppActions');
 var AppStore = require('../stores/AppStore');
-var MovieResults = require('./MovieResults.js');
 var SearchForm = require('./SearchForm.js');
+var MovieResults = require('./MovieResults.js');
 
 //Return the array of movies, which will be display at the bottom of the search bar
 function getAppState() {
@@ -21071,6 +21071,7 @@ function getAppState() {
     movies: AppStore.getMovieResults()
   }
 }
+
 
 var App = React.createClass({displayName: "App",
   getInitialState: function() {
@@ -21086,7 +21087,7 @@ var App = React.createClass({displayName: "App",
   },
 
   render: function() {
-    //If there is no search, nothing will show when clicked search
+     //If there is no search, nothing will show when clicked search
     if (this.state.movies == "") {
       var movieResults = "";
     } else {
@@ -21104,6 +21105,7 @@ var App = React.createClass({displayName: "App",
   _onChange: function() {
     this.setState(getAppState());
   }
+
 });
 
 module.exports = App;
@@ -21120,17 +21122,16 @@ var Movie = React.createClass({displayName: "Movie",
       React.createElement("div", {className: "well"}, 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-4"}, 
-        /*Get image when searched for movie*/
+          /*Get image when searched for movie*/
             React.createElement("img", {className: "thumbnail", src: this.props.movie.Poster})
           ), 
           React.createElement("div", {className: "col-md-8"}, 
             React.createElement("h4", null, this.props.movie.Title), 
-          /*An unordered list of movie details (eg: year release)*/
             React.createElement("ul", {className: "list-group"}, 
               React.createElement("li", {className: "list-group-item"}, "Year Released: ", this.props.movie.Year), 
               React.createElement("li", {className: "list-group-item"}, "IMDB ID: ", this.props.movie.imdbID)
             ), 
-          /*Link to the movie on IMDB*/
+            /*Link to the movie on IMDB*/
             React.createElement("a", {className: "btn btn-primary", href: link}, "View on IMDB")
           )
         )
@@ -21140,14 +21141,13 @@ var Movie = React.createClass({displayName: "Movie",
 
 });
 
-
 module.exports = Movie;
 
 },{"../action/AppActions.js":181,"../stores/AppStore":189,"react":180}],184:[function(require,module,exports){
 var React = require('react');
 var AppActions = require('../action/AppActions.js');
 var AppStore = require('../stores/AppStore');
-var Movie = require('./Movie.js');
+var Movie = require('./Movie.js')
 
 var MovieResults = React.createClass({displayName: "MovieResults",
   render: function() {
@@ -21164,6 +21164,7 @@ var MovieResults = React.createClass({displayName: "MovieResults",
       )
     )
   }
+
 });
 
 module.exports = MovieResults;
@@ -21176,8 +21177,8 @@ var AppStore = require('../stores/AppStore');
 var SearchForm = React.createClass({displayName: "SearchForm",
   render: function() {
     return (
-      React.createElement("div", null, 
-        React.createElement("h1", {className: "text-center"}, "Search A Movie"), 
+      React.createElement("div", {className: "search-form"}, 
+        React.createElement("h1", {className: "text-center"}, "Search For A Movie"), 
         React.createElement("form", {onSubmit: this.onSubmit}, 
           React.createElement("div", {className: "form-group"}, 
             React.createElement("input", {type: "text", className: "form-control", ref: "title", placeholder: "Please enter a movie title"})
@@ -21195,7 +21196,7 @@ var SearchForm = React.createClass({displayName: "SearchForm",
       title: this.refs.title.value.trim()
     }
 
-    //Using Flux
+    //Flux
     AppActions.searchMovies(movie);
   }
 
@@ -21232,10 +21233,11 @@ module.exports = AppDispatcher;
 var App = require('./components/App');
 var React = require('react');
 var ReactDOM = require('react-dom');
+var AppAPI = require('./utils/appAPI.js');
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"./components/App":182,"react":180,"react-dom":29}],189:[function(require,module,exports){
+},{"./components/App":182,"./utils/appAPI.js":190,"react":180,"react-dom":29}],189:[function(require,module,exports){
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
 var EventEmitter = require('events').EventEmitter;
@@ -21244,7 +21246,6 @@ var AppAPI = require('../utils/appAPI.js');
 
 var CHANGE_EVENT = 'change';
 
-//Store movies in this array
 var _movies = [];
 var _selected = '';
 

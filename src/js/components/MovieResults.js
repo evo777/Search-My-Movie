@@ -1,7 +1,7 @@
 var React = require('react');
 var AppActions = require('../action/AppActions.js');
 var AppStore = require('../stores/AppStore');
-var Movie = require('./Movie.js');
+var Movie = require('./Movie.js')
 
 var MovieResults = React.createClass({
   render: function() {
@@ -18,6 +18,7 @@ var MovieResults = React.createClass({
       </div>
     )
   }
+
 });
 
 module.exports = MovieResults;

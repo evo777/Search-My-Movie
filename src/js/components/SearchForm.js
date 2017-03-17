@@ -5,8 +5,8 @@ var AppStore = require('../stores/AppStore');
 var SearchForm = React.createClass({
   render: function() {
     return (
-      <div>
-        <h1 className="text-center">Search A Movie</h1>
+      <div className="search-form">
+        <h1 className="text-center">Search For A Movie</h1>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <input type="text" className="form-control" ref="title" placeholder="Please enter a movie title" />
@@ -24,7 +24,7 @@ var SearchForm = React.createClass({
       title: this.refs.title.value.trim()
     }
 
-    //Using Flux
+    //Flux
     AppActions.searchMovies(movie);
   }
 

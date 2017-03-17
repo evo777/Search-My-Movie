@@ -1,8 +1,8 @@
 var React = require('react');
 var AppActions = require('../action/AppActions');
 var AppStore = require('../stores/AppStore');
-var MovieResults = require('./MovieResults.js');
 var SearchForm = require('./SearchForm.js');
+var MovieResults = require('./MovieResults.js');
 
 //Return the array of movies, which will be display at the bottom of the search bar
 function getAppState() {
@@ -10,6 +10,7 @@ function getAppState() {
     movies: AppStore.getMovieResults()
   }
 }
+
 
 var App = React.createClass({
   getInitialState: function() {
@@ -25,7 +26,7 @@ var App = React.createClass({
   },
 
   render: function() {
-    //If there is no search, nothing will show when clicked search
+     //If there is no search, nothing will show when clicked search
     if (this.state.movies == "") {
       var movieResults = "";
     } else {
@@ -43,6 +44,7 @@ var App = React.createClass({
   _onChange: function() {
     this.setState(getAppState());
   }
+
 });
 
 module.exports = App;
