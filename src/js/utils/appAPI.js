@@ -4,7 +4,7 @@ module.exports = {
   searchMovies: function(movie) {
     $.ajax({
       //movie.title came from SearchForm component as an input
-      url: 'http://www.omdbapi.com/?s=' + movie.title,
+      url: 'https://www.omdbapi.com/?s=' + movie.title,
       dataType: 'json',
       cache: false,
       success: function(data) {
