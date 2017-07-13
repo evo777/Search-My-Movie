@@ -2,6 +2,9 @@
   "name": "search-my-movie",
   "version": "1.0.0",
   "description": "An application that searches your favorite movies.",
+  "engines": {
+    "node": "6.11.1"
+  },
   "main": "index.js",
   "scripts": {
     "build": "gulp",
